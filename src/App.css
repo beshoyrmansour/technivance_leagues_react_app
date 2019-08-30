@@ -1,4 +1,18 @@
-
-.bg-app-dark{
-  background-color: #092F42
+.bg-app-dark {
+  background-color: #092f42;
+}
+.app-card-img{
+  background-color: #F96734
+}
+.app-card-img img {
+  max-width: 250px;
+  /* width: 30%; */
+  /* width: auto; */
+}
+@media (max-width: 767.98px) {
+  .app-card-img img {
+    max-width: 100%;
+    width: 100%;
+    /* width: auto; */
+  }
 }

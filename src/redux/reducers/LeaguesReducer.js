@@ -1,5 +1,7 @@
 import ACTION_TYPES from "../actionTypes";
-const initialState = {};
+const initialState = {
+    title:'title FROM STORE'
+};
 
 const LeaguesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
