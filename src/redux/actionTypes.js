@@ -1,0 +1,12 @@
+const ACTION_TYPES = {
+  LEAGUES: {
+    GET_ALL: "LEAGUES__GET_ALL",
+    GET_DETAILS: "LEAGUES__GET_DETAILS"
+  },
+  TEAMS: {
+    GET_ALL: "TEAMS__GET_ALL",
+    GET_DETAILS: "TEAMS__GET_DETAILS"
+  }
+};
+
+export default ACTION_TYPES;
