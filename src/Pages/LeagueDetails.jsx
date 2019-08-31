@@ -75,15 +75,14 @@ const LeagueDetails = props => {
         )}
       </div>
       <div className="mt-5 row">
-          
         {leagueTeamsData.length > 0 ? (
           leagueTeamsData.map(team => (
             <div className="col-12 col-md-4">
-              <TeamCardComp key={team.id} teamData={team} leagueId={league_id}/>
+              <TeamCardComp key={team.id} teamData={team} leagueId={league_id} />
             </div>
           ))
         ) : (
-            <TeamCardCompPlaceholder times={20} />
+          <TeamCardCompPlaceholder times={20} />
         )}
       </div>
     </div>
