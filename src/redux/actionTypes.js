@@ -7,7 +7,7 @@ const ACTION_TYPES = {
 
   },
   TEAMS: {
-    GET_ALL: "TEAMS__GET_ALL",
+    SET_SELECTED: "TEAMS__SET_SELECTED",
     GET_DETAILS: "TEAMS__GET_DETAILS"
   }
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
 import ACTION_TYPES from "../actionTypes";
-import { API_ENDPOINTS, API_TOKEN } from "../../configs/APIs";
+import { API_ENDPOINTS } from "../../configs/APIs";
 
 export const GetAllLeagues = () => dispatch => {
   axios
@@ -22,7 +22,7 @@ export const SetSelectedLeague = selectedLeague => dispatch => {
     })
     .catch(err => {
       console.log("err =>", err.response);
-      if (err.response.status == 403)
+      // if (err.response.status == 403)
         dispatch({
           type: ACTION_TYPES.LEAGUES.SET_SELECTED,
           payload: selectedLeague.hasOwnProperty("area") ? selectedLeague : LocalLeagueMockData
@@ -30,7 +30,7 @@ export const SetSelectedLeague = selectedLeague => dispatch => {
     });
 };
 
-export const GetLeaguesTeams = (leagueId) => dispatch => {
+export const GetLeaguesTeams = leagueId => dispatch => {
   axios
     .get(API_ENDPOINTS.LEAGUES_TEAMS.replace("{LEAGUE_ID}", leagueId))
     .then(res => {
@@ -39,7 +39,7 @@ export const GetLeaguesTeams = (leagueId) => dispatch => {
     })
     .catch(err => {
       console.log("err =>", err.response);
-      if (err.response.status == 403)
+      // if (err.response.status === 403)
         dispatch({
           type: ACTION_TYPES.LEAGUES.SET_SELECTED_TEAMS,
           payload: LocalTeamsMockData

@@ -4,7 +4,7 @@ const API_ENDPOINTS = {
   ALL_LEAGUES: `${baseURL}/competitions`,
   LEAGUES_DETAILS: `${baseURL}/competitions/{LEAGUE_ID}`,
   LEAGUES_TEAMS: `${baseURL}/competitions/{LEAGUE_ID}/teams`,
-  LEAGUE_TEAM_DETAILS: `${baseURL}/competitions/{LEAGUE_ID}/teams/{TEAM_ID}`,
+  TEAM_DETAILS: `${baseURL}/teams/{TEAM_ID}`,
 };
 
 export {API_ENDPOINTS, API_TOKEN};

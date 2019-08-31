@@ -6,7 +6,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-app-dark">
       <div className="container">
         <div className="" id="navbarTogglerDemo01">
-          <a className="navbar-brand" href="/leagues">
+          <a className="navbar-brand" href="/league">
             <img src={logoLight} width="30" height="30" className="d-inline-block align-top mr-2" alt="" />
             Technivance League
           </a>

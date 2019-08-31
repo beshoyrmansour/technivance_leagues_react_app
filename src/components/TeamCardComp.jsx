@@ -1,18 +1,19 @@
 import React from "react";
 import logoDark from "../assets/imgs/logo_dark.png";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as TeamsActions from "../redux/actions/TeamsActions";
 import { withRouter } from "react-router-dom";
-const TeamCardComp = (props) => {
-
+const TeamCardComp = props => {
+  const handleSelectedTeam = () => {
+    props.history.push("/team/" + props.teamData.id);
+    props.SetSelectedTeam(props.teamData)
+  };
   return (
     <div className="card mb-3">
-        <Link to={'/team/'+props.teamData.id}>
-      <div className="row no-gutters">
+      <div className="row no-gutters" onClick={handleSelectedTeam}>
         <div className="col-md-4 app-card-img mw-100 ">
-            <div className="team-tla-block">{props.teamData.tla}</div>
+          <div className="team-tla-block">{props.teamData.tla}</div>
           {/* <img src={logoDark} className="card-img" alt="..." /> */}
         </div>
         <div className="col-md-8">
@@ -21,13 +22,10 @@ const TeamCardComp = (props) => {
           </div>
         </div>
       </div>
-      </Link>
     </div>
   );
 };
-const mapStateToProps = state => ({
-
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ ...TeamsActions }, dispatch);
