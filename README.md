@@ -1,3 +1,15 @@
+# Technivance League
+## React App 
+Using [//football-data.org](https://www.football-data.org) as a Backend 
+
+-----------------------------
+## NOTE: 
+I faced 403 issues even with using a valid API token, so I created mock objects to mimic the response in case of facing 403
+
+
+------------------------------------------
+------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
