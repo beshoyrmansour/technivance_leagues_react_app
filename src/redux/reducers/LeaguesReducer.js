@@ -1,15 +1,15 @@
 import ACTION_TYPES from "../actionTypes";
 const initialState = {
-    title:'title FROM STORE'
+  leagues: []
 };
 
 const LeaguesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ACTION_TYPES.LEAGUES.GET_ALL:
-      return { ...state, ...payload };
+      return { ...state, leagues: payload.data.competitions };
 
     default:
       return state;
   }
 };
-export default LeaguesReducer
+export default LeaguesReducer;

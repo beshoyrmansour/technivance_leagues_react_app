@@ -7,4 +7,4 @@ const API_ENDPOINTS = {
   LEAGUE_TEAM_DETAILS: `${baseURL}/competitions/{LEAGUE_ID}/teams/{TEAM_ID}`,
 };
 
-export default {API_ENDPOINTS, API_TOKEN};
+export {API_ENDPOINTS, API_TOKEN};

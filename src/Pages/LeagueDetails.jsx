@@ -1,9 +1,11 @@
 import React from 'react'
 
-const LeagueDetails = () => {
+const LeagueDetails = (props) => {
+    const { league_id } = props.match.params
+    // const { handle } = this.props.match.params
     return (
         <div>
-            LeagueDetails
+            LeagueDetails {league_id}
         </div>
     )
 }

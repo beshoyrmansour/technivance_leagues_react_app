@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
 import "./App.css";
 import Loading from "./utils/Loading";
@@ -25,8 +25,10 @@ function App() {
           <Route exact path="/league" name="League Details Page" component={LeaguesPage} />
           <Route exact path="/league/:league_id" name="League Details Page" component={LeagueDetails} />
           <Route exact path="/league/:league_id/team/:team_id" name="Team Page" component={TeamPage} />
+          <Route exact path="/" render={() => (<Redirect to="/league" />)} />          
+          <Route path="*" render={() => (<Redirect to="/league" />)} />          
 
-          <Route path="/" name="Leagues Page" component={LeaguesPage} />
+          {/* <Route path="/" name="Leagues Page" component={LeaguesPage} /> */}
         </Switch>
       </div>
     </BrowserRouter>

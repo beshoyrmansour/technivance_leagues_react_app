@@ -1,22 +1,39 @@
 import React from "react";
+// import {useSelector} from "react-redux";
 import logoDark from "../assets/imgs/logo_dark.png";
+import { Link } from "react-router-dom";
 
 const LeagueCardComp = props => {
+  // const title = useSelector(state => state.LeaguesReducer.title)
   return (
-    <div class="card mb-3">
-      <div class="d-flex flex-column flex-md-row ">
-        <div class="app-card-img mw-100">
-          <img src={logoDark} class="card-img" alt="..." />
-        </div>
-        <div class="">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+    <div className="card mb-3">
+      <div className="d-flex flex-column flex-md-row ">
+        {props.leagueImg ? (
+          <div className="app-card-img mw-100">
+            <img src={props.leagueImg} className="card-img" alt="..." />
+          </div>
+        ) : (
+          <div className="app-card-img mw-100 animated_background"></div>
+        )}
+        {/* <div className="app-card-img mw-100">
+            <img src={props.leagueImg} className="card-img" alt="..." />
+          </div> */}
+        <div className="w-100">
+          <div className="card-body h-100 d-flex flex-column ">
+            {props.leagueData.name && <h5 className="card-title">{props.leagueData.name}</h5>}
+            {props.leagueData.area && <p className="card-text">{props.leagueData.area.name}</p>}
+            {props.leagueData.currentSeason && (
+              <p className="card-text">
+                <small className="text-muted">
+                  current Season: {props.leagueData.currentSeason.startDate} - {props.leagueData.currentSeason.endDate}
+                </small>
+              </p>
+            )}
+            <div className="flex-grow-1 d-flex">
+              <Link to={'league/'+props.leagueData.id} className="btn btn-primary align-self-end">
+                More Details
+              </Link>
+            </div>
           </div>
         </div>
       </div>
