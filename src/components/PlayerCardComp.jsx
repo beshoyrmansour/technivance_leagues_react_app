@@ -45,7 +45,7 @@ const PlayerCardComp = props => {
           </h3>
         ) : (
           <h3 className="card-title " style={{ color: playerTextColor }}>
-            ?Role: <strong>{props.palyerData.role}</strong>
+            Role: <strong>{props.palyerData.role==="COACH" ? "Coach":"Coach Assistant"}</strong>
           </h3>
         )}
         <h5 className="card-title " style={{ color: playerTextColor }}>
