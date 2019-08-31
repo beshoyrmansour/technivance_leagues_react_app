@@ -1,9 +1,17 @@
 import React from "react";
 // import logoDark from "../assets/imgs/logo_dark.png";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as LeaguesActions from "../redux/actions/LeaguesActions";
+import { withRouter } from "react-router-dom";
 
 const LeagueCardComp = props => {
-  // const title = useSelector(state => state.LeaguesReducer.title)
+  const handleSelectedLeague = () => {
+    console.log(props.leagueData);
+    props.history.push("league/" + props.leagueData.id);
+    props.SetSelectedLeague(props.leagueData)
+    //to={"league/" + props.leagueData.id}
+  };
   return (
     <div className="card mb-3">
       <div className="d-flex flex-column flex-md-row ">
@@ -29,9 +37,9 @@ const LeagueCardComp = props => {
               </p>
             )}
             <div className="flex-grow-1 d-flex">
-              <Link to={'league/'+props.leagueData.id} className="btn btn-primary align-self-end">
+              <button className="btn btn-primary align-self-end" onClick={handleSelectedLeague}>
                 More Details
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -39,5 +47,14 @@ const LeagueCardComp = props => {
     </div>
   );
 };
+const mapStateToProps = state => ({
 
-export default LeagueCardComp;
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ ...LeaguesActions }, dispatch);
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(LeagueCardComp));
