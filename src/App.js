@@ -24,9 +24,9 @@ function App() {
         <Switch>
           <Route exact path="/league" name="League Details Page" component={LeaguesPage} />
           <Route exact path="/league/:league_id" name="League Details Page" component={LeagueDetails} />
-          <Route exact path="/league/:league_id/team/:team_id" name="Team Page" component={TeamPage} />
-          <Route exact path="/" render={() => (<Redirect to="/league" />)} />          
-          <Route path="*" render={() => (<Redirect to="/league" />)} />          
+          <Route exact path="/team/:team_id" name="Team Page" component={TeamPage} />
+          <Route exact path="/" render={() => <Redirect to="/league" />} />
+          <Route path="*" render={() => <Redirect to="/league" />} />
 
           {/* <Route path="/" name="Leagues Page" component={LeaguesPage} /> */}
         </Switch>

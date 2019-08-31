@@ -4,7 +4,7 @@ const LeagueCardCompPlaceholder = props => {
   let blockes = [];
   for (let i = 0; i < props.times; i++) {
     blockes.push({ id: i, blockContent: () =>
-        <div className="card mb-3  ">
+        <div className="card mb-3">
       <div className="d-flex flex-column flex-md-row ">
         <div className="app-card-img mw-100 animated_background">
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
-// import {useSelector} from "react-redux";
-import logoDark from "../assets/imgs/logo_dark.png";
+// import logoDark from "../assets/imgs/logo_dark.png";
 import { Link } from "react-router-dom";
 
 const LeagueCardComp = props => {
