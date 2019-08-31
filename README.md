@@ -9,6 +9,11 @@ I faced 403 issues even with using a valid API token, so I created mock objects 
 
 ------------------------------------------
 ------------------------------------------
+## Run a Build
+Just run the fullowing
+`yarn global add serve`
+  
+`serve -s build`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
