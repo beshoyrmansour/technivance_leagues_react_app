@@ -6,7 +6,6 @@ export const GetAllLeagues = () => dispatch => {
   axios
     .get(API_ENDPOINTS.ALL_LEAGUES)
     .then(res => {
-      //   console.log(" GetAllLeagues =>res :", res.data);
       dispatch({ type: ACTION_TYPES.LEAGUES.GET_ALL, payload: res });
     })
     .catch(err => {
@@ -17,12 +16,10 @@ export const SetSelectedLeague = selectedLeague => dispatch => {
   axios
     .get(API_ENDPOINTS.LEAGUES_DETAILS.replace("{LEAGUE_ID}", selectedLeague.id))
     .then(res => {
-      //   console.log(" GetAllLeagues =>res :", res.data);
-      dispatch({ type: ACTION_TYPES.LEAGUES.SET_SELECTED, payload: res });
+      dispatch({ type: ACTION_TYPES.LEAGUES.SET_SELECTED, payload: res.data });
     })
     .catch(err => {
       console.log("err =>", err.response);
-      // if (err.response.status == 403)
         dispatch({
           type: ACTION_TYPES.LEAGUES.SET_SELECTED,
           payload: selectedLeague.hasOwnProperty("area") ? selectedLeague : LocalLeagueMockData
@@ -34,8 +31,7 @@ export const GetLeaguesTeams = leagueId => dispatch => {
   axios
     .get(API_ENDPOINTS.LEAGUES_TEAMS.replace("{LEAGUE_ID}", leagueId))
     .then(res => {
-      //   console.log(" GetAllLeagues =>res :", res.data);
-      dispatch({ type: ACTION_TYPES.LEAGUES.SET_SELECTED_TEAMS, payload: res });
+      dispatch({ type: ACTION_TYPES.LEAGUES.SET_SELECTED_TEAMS, payload: res.data });
     })
     .catch(err => {
       console.log("err =>", err.response);

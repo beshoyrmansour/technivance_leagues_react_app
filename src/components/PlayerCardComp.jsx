@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const PlayerCardComp = props => {
-  console.log("props.palyerData", props.palyerData);
   const [playerBackgroundColor, setPlayerBackgroundColor] = useState("#092F42");
   const [playerTextColor, setPlayerTextColor] = useState("#ffffff");
   useEffect(() => {

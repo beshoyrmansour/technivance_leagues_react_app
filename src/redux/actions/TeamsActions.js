@@ -7,12 +7,10 @@ export const SetSelectedTeam= selectedTeam => dispatch => {
     axios
       .get(API_ENDPOINTS.TEAM_DETAILS.replace("{TEAM_ID}", selectedTeam.id))
       .then(res => {
-        //   console.log(" GetAllLeagues =>res :", res.data);
         dispatch({ type: ACTION_TYPES.TEAMS.SET_SELECTED, payload: res.data });
       })
       .catch(err => {
         console.log("err =>", err.response);
-        // if (err.response.status === 403)
           dispatch({
             type: ACTION_TYPES.TEAMS.SET_SELECTED,
             payload: selectedTeam.hasOwnProperty("name") ? selectedTeam : 
